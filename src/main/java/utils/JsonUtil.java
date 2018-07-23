@@ -2,7 +2,6 @@ package utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
-import domain.User;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,7 +10,7 @@ import java.util.ArrayList;
 
 public class JsonUtil {
 
-    public static ArrayList<User> passeJSON(String pathToFile) {
+    public static ArrayList<Object> passeJSON(String pathToFile) {
 
         FileInputStream file = null;
         try {
@@ -23,11 +22,11 @@ public class JsonUtil {
         ObjectMapper mapper = new ObjectMapper();
         TypeFactory factory = TypeFactory.defaultInstance();
 
-        ArrayList<User> list = null;
+        ArrayList<Object> list = null;
         try {
             list = mapper.readValue(
                     file, factory.constructCollectionType(
-                            ArrayList.class, User.class));
+                            ArrayList.class, Object.class));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -49,7 +48,7 @@ public class JsonUtil {
         try {
             list = mapper.readValue(
                     file, factory.constructCollectionType(
-                            ArrayList.class, User.class));
+                            ArrayList.class, Object.class));
         } catch (IOException e) {
             e.printStackTrace();
         }
