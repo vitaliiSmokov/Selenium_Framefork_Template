@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="">
+
+    <!--<parameter name="browser" value="FIREFOX"/>-->
+    <parameter name="browser" value="CHROME"/>
+
+    <test name="">
+        <classes>
+            <class name=""/>
+            <class name=""/>
+        </classes>
+    </test>
+
+</suite>
